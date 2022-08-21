@@ -1,0 +1,66 @@
+schema = 3
+
+[mod]
+  [mod."github.com/cenkalti/backoff/v4"]
+    version = "v4.1.3"
+    hash = "sha256-u6MEDopHoTWAZoVvvXOKnAg++xre53YgQx0gmf6t2KU="
+  [mod."github.com/go-faster/errors"]
+    version = "v0.6.1"
+    hash = "sha256-tfruNDOJ6lOb9eTYXN+hu3BzTl1HlYzeI/lSTEQ1JlQ="
+  [mod."github.com/go-faster/jx"]
+    version = "v0.39.0"
+    hash = "sha256-AbRUpsrIhhk7a4ezJ+IM1GbZlCMH7jqr1ZxMrxqIB1k="
+  [mod."github.com/go-faster/xor"]
+    version = "v0.3.0"
+    hash = "sha256-fI6a76v1GaFmmxUWBiL6Px6LZMQ96s8dTW5/hEJPJC8="
+  [mod."github.com/gotd/ige"]
+    version = "v0.2.2"
+    hash = "sha256-tCSyC+Y1A0ZW+ak71lS8uktRPDr0mviki/BteepAX1A="
+  [mod."github.com/gotd/neo"]
+    version = "v0.1.5"
+    hash = "sha256-Pi99CiHCT59m+ohEGQjbAIaxS2Fo9qvSSBEDPqJnLw4="
+  [mod."github.com/gotd/td"]
+    version = "v0.68.0"
+    hash = "sha256-6PjMJraeXG9r9j+gUaeSGKbhfDXfzou32OBayUi5Yok="
+  [mod."github.com/klauspost/compress"]
+    version = "v1.15.9"
+    hash = "sha256-ctPxlVq0c/SoNPVsP66RjxUjTHys3diW2Apxjyc9WdE="
+  [mod."github.com/peterbourgon/ff/v3"]
+    version = "v3.3.0"
+    hash = "sha256-GCVJTkrt1zCpOW+nLlEyB39btw8RgvGI2KNDn4XXtxA="
+  [mod."github.com/segmentio/asm"]
+    version = "v1.2.0"
+    hash = "sha256-zbNuKxNrUDUc6IlmRQNuJQzVe5Ol/mqp7srDg9IMMqs="
+  [mod."go.opentelemetry.io/otel"]
+    version = "v1.9.0"
+    hash = "sha256-rP9kSnsGDaUDiYrQkBchHPLHGBJv5D16lR+UJ4wIzw8="
+  [mod."go.opentelemetry.io/otel/trace"]
+    version = "v1.9.0"
+    hash = "sha256-zHQ67CcTsSVukBH3MKIycJKeWYXSnEgql/Jxq8ixjLI="
+  [mod."go.uber.org/atomic"]
+    version = "v1.10.0"
+    hash = "sha256-E6UEDc1eh/cLUFd+J86cDesQ0B8wEv/DdaAVKb+x2t8="
+  [mod."go.uber.org/multierr"]
+    version = "v1.8.0"
+    hash = "sha256-WHWgw6hLI4tPKEqJt+WC38yt64OGCXfkUJDem6mM+Mw="
+  [mod."go.uber.org/zap"]
+    version = "v1.22.0"
+    hash = "sha256-3voQ0SFThRxMD3mFiRC55KtbuIpmzLd8sfCD/mOc/T8="
+  [mod."golang.org/x/crypto"]
+    version = "v0.0.0-20210921155107-089bfa567519"
+    hash = "sha256-62Qtoqu7AxoxpZFd+75qXC0naixAct3rWsJd0nSgMCU="
+  [mod."golang.org/x/net"]
+    version = "v0.0.0-20220812174116-3211cb980234"
+    hash = "sha256-v/Qep/W6lw6IurR+R2V0AN/MlQUROLnEaWeeuwY8sg8="
+  [mod."golang.org/x/sync"]
+    version = "v0.0.0-20220722155255-886fb9371eb4"
+    hash = "sha256-ZZyIlxh+nqsOiWHstW7eHXN7RhHnbSL2eDIzcve07Q0="
+  [mod."golang.org/x/sys"]
+    version = "v0.0.0-20220728004956-3c1f35247d10"
+    hash = "sha256-obSKM1aiGEyYNauzaL0msReglT2XL726gL89ywjFLE8="
+  [mod."nhooyr.io/websocket"]
+    version = "v1.8.7"
+    hash = "sha256-6pQ35gFvbyMhNo0gv4bPxYDUrwDF/ok1GMA+BHfsRRM="
+  [mod."rsc.io/qr"]
+    version = "v0.2.0"
+    hash = "sha256-I3fAJwwZhIrgBbCjWvIElAE9JqG2y59KRBc78EYi3RM="
