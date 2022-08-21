@@ -1,0 +1,44 @@
+#+TITLE: butter-robot
+
+[[https://img.shields.io/github/license/dearrude/butter-bot.svg]]
+[[https://img.shields.io/github/last-commit/dearrude/butter-bot.svg]]
+
+** Description
+[[youtube:https://www.youtube.com/watch?v=X7HmltUWXgs][The Butter Robot]] is a Telegram bot aimed to automate tiresome simple tasks.
+Aside from passing the butter, it task is to act as a toolbox commands.
+
+butter-robot is not still considered stable.
+
+** Setup
+*** From source
+Have ~go 1.19~ installed in your system.
+
+Make a config file and fill the specified units. Alternatively, configurations
+can be passed in CLI flags or environment variables.
+#+BEGIN_SRC sh
+$ cp .env.sample .env
+$ $EDITOR .env
+#+END_SRC
+
+#+BEGIN_SRC sh
+$ go run .
+#+END_SRC
+
+*** Docker
+#+BEGIN_SRC sh
+$ docker run ghcr.io/dearrude/butter-bot:latest
+#+END_SRC
+
+*** Nix
+To run:
+#+BEGIN_SRC sh
+$ nix run github.com/dearrude/butter-bot
+#+END_SRC
+
+To set up development environment:
+#+BEGIN_SRC sh
+$ nix develop
+#+END_SRC
+
+** Licence
+AGPLv3+
