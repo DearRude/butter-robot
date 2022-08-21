@@ -1,7 +1,7 @@
 #+TITLE: butter-robot
 
-[[https://img.shields.io/github/license/dearrude/butter-bot.svg]]
-[[https://img.shields.io/github/last-commit/dearrude/butter-bot.svg]]
+[[https://img.shields.io/github/license/dearrude/butter-robot.svg]]
+[[https://img.shields.io/github/last-commit/dearrude/butter-robot.svg]]
 
 ** Description
 [[youtube:https://www.youtube.com/watch?v=X7HmltUWXgs][The Butter Robot]] is a Telegram bot aimed to automate tiresome simple tasks.
@@ -26,13 +26,13 @@ $ go run .
 
 *** Docker
 #+BEGIN_SRC sh
-$ docker run ghcr.io/dearrude/butter-bot:latest
+$ docker run ghcr.io/dearrude/butter-robot:latest
 #+END_SRC
 
 *** Nix
 To run:
 #+BEGIN_SRC sh
-$ nix run github.com/dearrude/butter-bot
+$ nix run github.com/dearrude/butter-robot
 #+END_SRC
 
 To set up development environment:
