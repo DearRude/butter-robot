@@ -25,7 +25,11 @@ func GenConfig() Config {
 	if err != nil {
 		log.Fatalf("Unable to make zap logger. Error: %s", err)
 	}
-	defer logger.Sync()
+	defer func() {
+		if err := logger.Sync(); err != nil {
+			logger.Error("Unstable to sync logger")
+		}
+	}()
 
 	logger.Info("Reading configurations")
 
