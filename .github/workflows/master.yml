@@ -55,3 +55,17 @@ jobs:
       - run: ko build -B ./
         env:
           KO_DOCKER_REPO: ghcr.io/dearrude
+
+  deployment:
+    needs: build-docker
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+    - uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.DOCKER_HOST }}
+        username: ${{ secrets.DOCKER_USER }}
+        key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
+        script: |
+          cd butter-robot
+          docker-compose pull && docker-compose up --force-recreate -d
