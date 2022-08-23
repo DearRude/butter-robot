@@ -38,8 +38,14 @@ func GenConfig() Config {
 		appId    = fs.Int("appId", 0, "APP ID in Telegram API")
 		appHash  = fs.String("appHash", "", "APP Hash in Telegram API")
 		botToken = fs.String("botToken", "", "Bot token given by botfather")
-		_        = fs.String("config", ".env", "config file (optional)")
 	)
+
+	if _, err := os.Stat(".env"); os.IsNotExist(err) {
+		fs.String("config", "", "config file")
+	} else {
+		fs.String("config", ".env", "config file")
+	}
+
 	err = ff.Parse(fs, os.Args[1:],
 		ff.WithEnvVars(),
 		ff.WithConfigFileFlag("config"),
