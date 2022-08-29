@@ -42,9 +42,7 @@ func main() {
 				Update:   u,
 				Message:  m,
 			}
-			commandHandler.Run()
-
-			return nil
+			return commandHandler.Run()
 		})
 
 		if err := telegram.RunUntilCanceled(ctx, client); err != nil {
