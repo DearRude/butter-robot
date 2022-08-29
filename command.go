@@ -60,5 +60,10 @@ func makeHandler() CommandHandler {
 		return err
 	})
 
+	handler.AddCommand("start", "bot start message", func(o CommandOptions) error {
+		text := "I'm ready to pass the butter..."
+		_, err := o.Client.Reply(o.Entities, o.Update).Text(o.Ctx, text)
+		return err
+	})
 	return handler
 }
