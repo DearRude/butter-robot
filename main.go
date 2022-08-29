@@ -14,6 +14,7 @@ func main() {
 	ctx := context.Background()
 
 	dispatcher := tg.NewUpdateDispatcher()
+	commandHandler := makeHandler()
 	opts := telegram.Options{
 		Logger:        &c.Logger,
 		UpdateHandler: dispatcher,
@@ -28,14 +29,22 @@ func main() {
 
 		api := tg.NewClient(client)
 		sender := message.NewSender(api)
+
 		dispatcher.OnNewMessage(func(ctx context.Context, entities tg.Entities, u *tg.UpdateNewMessage) error {
 			m, ok := u.Message.(*tg.Message)
 			if !ok || m.Out {
 				return nil
 			}
+			commandHandler.Options = CommandOptions{
+				Ctx:      ctx,
+				Client:   sender,
+				Entities: entities,
+				Update:   u,
+				Message:  m,
+			}
+			commandHandler.Run()
 
-			_, err := sender.Reply(entities, u).Text(ctx, m.Message)
-			return err
+			return nil
 		})
 
 		if err := telegram.RunUntilCanceled(ctx, client); err != nil {
