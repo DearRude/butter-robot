@@ -67,7 +67,7 @@ func makeHandler(logger *zap.Logger) CommandHandler {
 	handler.AddCommand("ping", "ping bot availbility", func(o CommandOptions) error {
 		tm := time.Now()
 		_, err := o.Client.Reply(o.Entities, o.Update).StyledText(o.Ctx,
-			styling.Italic(fmt.Sprintf("pong %dμs", time.Now().Sub(tm).Microseconds())))
+			styling.Italic(fmt.Sprintf("pong %dμs", time.Since(tm).Microseconds())))
 		return err
 	})
 
