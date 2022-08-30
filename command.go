@@ -5,12 +5,16 @@ import (
 	"strings"
 
 	"github.com/google/uuid"
+	"go.uber.org/zap"
+
 	"github.com/gotd/td/telegram/message"
+	"github.com/gotd/td/telegram/message/styling"
 	"github.com/gotd/td/tg"
 )
 
 type CommandHandler struct {
 	Prefix   string
+	Logger   *zap.Logger
 	Options  CommandOptions
 	Commands []BotCommmand
 }
@@ -45,19 +49,21 @@ func (h *CommandHandler) Run() error {
 		if headCommand != (h.Prefix + command.Command) {
 			continue
 		}
+		h.Logger.Info("Bot command is called.", zap.String("command", command.Command))
 		return command.Func(h.Options)
 	}
 
 	return nil
 }
 
-func makeHandler() CommandHandler {
+func makeHandler(logger *zap.Logger) CommandHandler {
 	handler := CommandHandler{
 		Prefix: "/",
+		Logger: logger,
 	}
 
 	handler.AddCommand("ping", "ping bot availbility", func(o CommandOptions) error {
-		_, err := o.Client.Reply(o.Entities, o.Update).Text(o.Ctx, "pong")
+		_, err := o.Client.Reply(o.Entities, o.Update).StyledText(o.Ctx, styling.Italic("pong"))
 		return err
 	})
 
@@ -69,7 +75,7 @@ func makeHandler() CommandHandler {
 
 	handler.AddCommand("uuid", "generate v4 UUID", func(o CommandOptions) error {
 		id_string := uuid.New().String()
-		_, err := o.Client.Reply(o.Entities, o.Update).Text(o.Ctx, id_string)
+		_, err := o.Client.Reply(o.Entities, o.Update).StyledText(o.Ctx, styling.Code(id_string))
 		return err
 	})
 

@@ -14,7 +14,7 @@ func main() {
 	ctx := context.Background()
 
 	dispatcher := tg.NewUpdateDispatcher()
-	commandHandler := makeHandler()
+	commandHandler := makeHandler(&c.Logger)
 	opts := telegram.Options{
 		Logger:        &c.Logger,
 		UpdateHandler: dispatcher,
