@@ -19,4 +19,7 @@ in pkgs.mkShell {
     pkgs.go-outline
     pkgs.gopkgs
   ];
+  shellHook = ''
+    export "GOROOT=$(go env GOROOT)"
+  '';
 }
