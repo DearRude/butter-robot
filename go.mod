@@ -3,6 +3,7 @@ module github.com/DearRude/butter-robot
 go 1.19
 
 require (
+	github.com/google/uuid v1.3.0
 	github.com/gotd/td v0.68.0
 	github.com/peterbourgon/ff/v3 v3.3.0
 	go.uber.org/zap v1.22.0
