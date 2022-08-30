@@ -2,7 +2,9 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"strings"
+	"time"
 
 	"github.com/google/uuid"
 	"go.uber.org/zap"
@@ -63,7 +65,9 @@ func makeHandler(logger *zap.Logger) CommandHandler {
 	}
 
 	handler.AddCommand("ping", "ping bot availbility", func(o CommandOptions) error {
-		_, err := o.Client.Reply(o.Entities, o.Update).StyledText(o.Ctx, styling.Italic("pong"))
+		tm := time.Now()
+		_, err := o.Client.Reply(o.Entities, o.Update).StyledText(o.Ctx,
+			styling.Italic(fmt.Sprintf("pong %dμs", time.Now().Sub(tm).Microseconds())))
 		return err
 	})
 
