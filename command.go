@@ -4,6 +4,7 @@ import (
 	"context"
 	"strings"
 
+	"github.com/google/uuid"
 	"github.com/gotd/td/telegram/message"
 	"github.com/gotd/td/tg"
 )
@@ -65,5 +66,12 @@ func makeHandler() CommandHandler {
 		_, err := o.Client.Reply(o.Entities, o.Update).Text(o.Ctx, text)
 		return err
 	})
+
+	handler.AddCommand("uuid", "generate v4 UUID", func(o CommandOptions) error {
+		id_string := uuid.New().String()
+		_, err := o.Client.Reply(o.Entities, o.Update).Text(o.Ctx, id_string)
+		return err
+	})
+
 	return handler
 }

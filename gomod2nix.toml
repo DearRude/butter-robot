@@ -13,6 +13,9 @@ schema = 3
   [mod."github.com/go-faster/xor"]
     version = "v0.3.0"
     hash = "sha256-fI6a76v1GaFmmxUWBiL6Px6LZMQ96s8dTW5/hEJPJC8="
+  [mod."github.com/google/uuid"]
+    version = "v1.3.0"
+    hash = "sha256-QoR55eBtA94T2tBszyxfDtO7/pjZZSGb5vm7U0Xhs0Y="
   [mod."github.com/gotd/ige"]
     version = "v0.2.2"
     hash = "sha256-tCSyC+Y1A0ZW+ak71lS8uktRPDr0mviki/BteepAX1A="
